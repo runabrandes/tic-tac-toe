@@ -40,3 +40,30 @@ boardPositions = {
     '9': '9',
 }
 
+"""
+Function to print the board game and make it visible to user.
+Using dictionary keys and values from "boardPositions".
+"""
+
+def printGameBoard(board):
+    print("--+---+--")
+    print(board['1'] + ' | ' + board['2'] + ' | ' + board['3'])
+    print("--+---+--")
+    print(board['4'] + ' | ' + board['5'] + ' | ' + board['6'])
+    print("--+---+--")
+    print(board['7'] + ' | ' + board['8'] + ' | ' + board['9'])
+    print("--+---+--")
+
+
+player1 == "X"
+player2 == "O"
+
+#def userMoveInput():
+    
+
+
+#def winningCombinations():
+#012,036,048,147,246,345,258,678
+
+username_input()
+printGameBoard(boardPositions)
