@@ -13,14 +13,15 @@ def username_input():
         print ("Input invalid.... Please enter a username!")
     elif not username.isalpha():
         print("The username cannot contain numbers, please use letters only!")
-    else:
-        #break
-        return username
+    #else:
+
+    return username
 
 """
 Outlining the rules to the user
 """
 def gameRules():
+    print(f"\nHello {user}!\n")
     print("This Tic Tac Toe game is played by putting down X's and O's.\n")
     print("Users take turns putting down their symbol in one of the board fields (1-9)\n")
     print("The first user to have three X's or O's in a row wins!\n")
@@ -59,19 +60,36 @@ def printGameBoard(board):
 
 #012,036,048,147,246,345,258,678
 def winningCombinations(board, recentPlayer):
+    #top row
+    if board['1'] == recentPlayer and board['2'] == recentPlayer and board['3'] == recentPlayer:
+        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+        return True
+    #middle row
+    if board['4'] == recentPlayer and board['5'] == recentPlayer and board['6'] == recentPlayer:
+        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+        return True
+    #bottom row
+    if board['7'] == recentPlayer and board['8'] == recentPlayer and board['9'] == recentPlayer:
+        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+        return True
+
+    return False
 
 
 checkForWin = False
 
+
+user = username_input()
+
 gameRules()
-username_input()
 
 player = "X"
 
 while checkForWin == False:
-    userSelection = input(f'Your turn {username_input}! Please enter a board position:')
+    userSelection = input(f'Your turn! Please enter a board position:')
     boardPositions[userSelection] = player
     printGameBoard(boardPositions)
+    winningCombinations(boardPositions, player)
 
 #def playerInput():
 
