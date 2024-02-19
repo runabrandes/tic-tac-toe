@@ -72,6 +72,26 @@ def winningCombinations(board, recentPlayer):
     if board['7'] == recentPlayer and board['8'] == recentPlayer and board['9'] == recentPlayer:
         print(f'{recentPlayer} wins this round of Tic Tac Toe!')
         return True
+    #left column
+    if board['1'] == recentPlayer and board['4'] == recentPlayer and board['7'] == recentPlayer:
+        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+        return True
+    #middle column
+    if board['2'] == recentPlayer and board['5'] == recentPlayer and board['8'] == recentPlayer:
+        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+        return True
+    #right column
+    if board['3'] == recentPlayer and board['6'] == recentPlayer and board['9'] == recentPlayer:
+        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+        return True
+    #diagonal 1,5,9
+    if board['1'] == recentPlayer and board['5'] == recentPlayer and board['9'] == recentPlayer:
+        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+        return True
+    #diagonal 3,5,7
+    if board['3'] == recentPlayer and board['5'] == recentPlayer and board['7'] == recentPlayer:
+        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+        return True
 
     return False
 
