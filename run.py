@@ -110,8 +110,14 @@ def checkIfOccupied(board, recentTurn):
         return False
     return True
 
-
-checkForWin = False
+"""
+Function to check if the game board is full
+"""
+def boardFull(board):
+    for field in board:
+        if board[field] == '-':
+            return False
+    return True
 
 
 user = username_input()
@@ -120,16 +126,22 @@ gameRules()
 
 player = "X"
 
+checkForWin = False
+
 while checkForWin == False:
     userSelection = input(f'Your turn {player}! Please enter a board position: \n')
     if checkIfOccupied(boardPositions, userSelection) == False:
+        print('This board position has already been chosen.\n')
         continue
     boardPositions[userSelection] = player
     printGameBoard(boardPositions)
     #game will stop if checkForWin returns true based on winnignCombinations
     checkForWin = winningCombinations(boardPositions, player)
 
-#swapping X and O - checks if player is X or O and swaps accordingly after it has checked for win
+    if boardFull(boardPositions) == True and checkForWin == False:
+        print('This round is a TIE! Better luck next time..!\n')
+
+#swapping X and O - checks if player is X or O and swaps accordingly after checkForWin ran
     if player == 'X':
         player = 'O'
     elif player == 'O':
