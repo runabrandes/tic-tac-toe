@@ -23,6 +23,7 @@ Outlining the rules to the user
 def gameRules():
     print(f"\nHello {user}!\n")
     print("This Tic Tac Toe game is played by putting down X's and O's.\n")
+    print(f"You will be PLAYER X, {user}!\n")
     print("Users take turns putting down their symbol in one of the board fields (1-9)\n")
     print("The first user to have three X's or O's in a row wins!\n")
     print("This can be either horizontal, vertical or diagonal.\n")
@@ -106,12 +107,20 @@ gameRules()
 player = "X"
 
 while checkForWin == False:
-    userSelection = input(f'Your turn! Please enter a board position:')
+    userSelection = input(f'Your turn {player}! Please enter a board position:')
     boardPositions[userSelection] = player
     printGameBoard(boardPositions)
     winningCombinations(boardPositions, player)
 
-#def playerInput():
+#swapping X and O - checks if player is X or O and swaps accordingly after it has checked for win
+    if player == 'X':
+        player = 'O'
+    elif player == 'O':
+        player = 'X'
+
+
+#while checkForWin == True:
+    #end game
 
 
 
