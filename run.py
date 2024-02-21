@@ -7,6 +7,10 @@ print("_________________________________\n")
 print("Welcome to this Tic Tac Toe game!")
 print("_________________________________\n")
 
+"""
+Function to ask for username
+"""
+
 def username_input():
     username = input("Please enter your name: \n")
     if username == "":
@@ -14,6 +18,7 @@ def username_input():
     elif not username.isalpha():
         print("The username cannot contain numbers, please use letters only!")
     #else:
+       # continue ..... Value error? <-----------------<-------------------
 
     return username
 
@@ -97,6 +102,15 @@ def winningCombinations(board, recentPlayer):
     return False
 
 
+"""
+Function to check if the field the user chooses is still available
+"""
+def checkIfOccupied(board, recentTurn):
+    if board[recentTurn] != '-':
+        return False
+    return True
+
+
 checkForWin = False
 
 
@@ -107,10 +121,13 @@ gameRules()
 player = "X"
 
 while checkForWin == False:
-    userSelection = input(f'Your turn {player}! Please enter a board position:')
+    userSelection = input(f'Your turn {player}! Please enter a board position: \n')
+    if checkIfOccupied(boardPositions, userSelection) == False:
+        continue
     boardPositions[userSelection] = player
     printGameBoard(boardPositions)
-    winningCombinations(boardPositions, player)
+    #game will stop if checkForWin returns true based on winnignCombinations
+    checkForWin = winningCombinations(boardPositions, player)
 
 #swapping X and O - checks if player is X or O and swaps accordingly after it has checked for win
     if player == 'X':
@@ -118,10 +135,3 @@ while checkForWin == False:
     elif player == 'O':
         player = 'X'
 
-
-#while checkForWin == True:
-    #end game
-
-
-
-printGameBoard(boardPositions)
