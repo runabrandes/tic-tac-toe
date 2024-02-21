@@ -17,9 +17,9 @@ def username_input():
         print ("Input invalid.... Please enter a username!")
     elif not username.isalpha():
         print("The username cannot contain numbers, please use letters only!")
-    #else:
-       # continue ..... Value error? <-----------------<-------------------
-
+    else:
+        ValueError
+        #<---------------------------------------
     return username
 
 """
@@ -129,7 +129,7 @@ player = "X"
 checkForWin = False
 
 while checkForWin == False:
-    userSelection = input(f'Your turn {player}! Please enter a board position: \n')
+    userSelection = input(f'Your turn {player}! Please enter a board position: \n') # letter input accidentally?
     if checkIfOccupied(boardPositions, userSelection) == False:
         print('This board position has already been chosen.\n')
         continue
@@ -140,6 +140,7 @@ while checkForWin == False:
 
     if boardFull(boardPositions) == True and checkForWin == False:
         print('This round is a TIE! Better luck next time..!\n')
+        break
 
 #swapping X and O - checks if player is X or O and swaps accordingly after checkForWin ran
     if player == 'X':
