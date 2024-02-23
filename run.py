@@ -12,15 +12,15 @@ Function to ask for username
 """
 
 def username_input():
-    username = input("Please enter your name: \n")
-    if username == "":
-        print ("Input invalid.... Please enter a username!")
-    elif not username.isalpha():
-        print("The username cannot contain numbers, please use letters only!")
-    else:
-        ValueError
-        #<---------------------------------------
-    return username
+    while True:
+        username = input("Please enter your name: \n")
+        if username == "":
+            print ("Input invalid.... Please enter a username!")
+        elif not username.isalpha():
+            print("The username cannot contain numbers, please use letters only!")
+        else:
+            return username
+        
 
 """
 Outlining the rules to the user
@@ -64,7 +64,7 @@ def printGameBoard(board):
     print("--+---+--")
     print(board['7'] + ' | ' + board['8'] + ' | ' + board['9'])
 
-#012,036,048,147,246,345,258,678
+
 def winningCombinations(board, recentPlayer):
     #top row
     if board['1'] == recentPlayer and board['2'] == recentPlayer and board['3'] == recentPlayer:
@@ -120,6 +120,14 @@ def boardFull(board):
     return True
 
 
+"""
+Function to empty every field in board
+"""
+def resetBoard(board):
+    for key in board:
+        board[key] = '-'
+
+
 user = username_input()
 
 gameRules()
@@ -128,23 +136,72 @@ player = "X"
 
 checkForWin = False
 
-while checkForWin == False:
-    userSelection = input(f'Your turn {player}! Please enter a board position: \n') # letter input accidentally?
-    if checkIfOccupied(boardPositions, userSelection) == False:
-        print('This board position has already been chosen.\n')
-        continue
-    boardPositions[userSelection] = player
-    printGameBoard(boardPositions)
-    #game will stop if checkForWin returns true based on winnignCombinations
-    checkForWin = winningCombinations(boardPositions, player)
+def runGame():
+    global checkForWin
+    global player
+    
+    while checkForWin == False:
+        while True:
+            userSelection = input(f'Your turn {player}! Please enter a board position: \n')
+            if userSelection == "":
+                print ("Input invalid.... Please enter a number between 1-9!")
+            elif not userSelection.isnumeric():
+                print("The selection cannot contain letters, please use numbers 1-9 only!")
+            elif not int(userSelection) in range(1,10):
+                print("Please enter a number between 1 and 9!\n")
+            else:
+                break
 
-    if boardFull(boardPositions) == True and checkForWin == False:
-        print('This round is a TIE! Better luck next time..!\n')
-        break
+        if checkIfOccupied(boardPositions, userSelection) == False:
+            print('This board position has already been chosen.\n')
+            continue
+        boardPositions[userSelection] = player
+        printGameBoard(boardPositions)
 
-#swapping X and O - checks if player is X or O and swaps accordingly after checkForWin ran
-    if player == 'X':
-        player = 'O'
-    elif player == 'O':
-        player = 'X'
+        #game will stop if checkForWin returns true based on winnignCombinations
+        checkForWin = winningCombinations(boardPositions, player)
 
+        if boardFull(boardPositions) == True and checkForWin == False:
+            print('This round is a TIE! Better luck next time..!\n')
+            playAgain()
+            break
+
+        if boardFull(boardPositions) == False and checkForWin == True:
+            playAgain()
+            break
+
+    #swapping X and O - checks if player is X or O and swaps accordingly after checkForWin ran
+        if player == 'X':
+            player = 'O'
+        elif player == 'O':
+            player = 'X'
+
+"""
+Function to ask user if they would like to restart the game
+"""
+def playAgain():
+    global player
+    global checkForWin
+    
+    while True:
+        try:
+            print("Are you up for another round of Tic Tac Toe?")
+            userReply = input("Type 'y' for yes or 'n' for no!: \n")
+        except ValueError:
+            print("Invalid input... Please try again!\n")
+            continue
+        if userReply != "y" and userReply != "n":
+            print("Invalid input... Please try again using y for yes or n for no!")
+            continue
+        elif userReply == "y":
+            player ="X"
+            resetBoard(boardPositions)
+            checkForWin = False
+            runGame()
+        elif userReply == "n":
+            print("Thanks for playing! See you next time")
+            break
+        return
+
+
+runGame() 
