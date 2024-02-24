@@ -103,5 +103,9 @@ The game has got following features:
 
 ![goodbye](assets/images/goodbye.png)
 
+## Future Feature
+
+* An idea for a future feature would be to let the user decide if they want to play against a computer or let Player O be a friend instead and turn the game into a 2 player game on selection
+
 #
 
