@@ -1,4 +1,5 @@
 import random
+import time
 
 """
 Greeting message to user 
@@ -25,16 +26,20 @@ def username_input():
 """
 Outlining the rules to the user
 """
+time.sleep(1.0)
 def gameRules():
     print(f"\nHello, {user}!\n")
+    time.sleep(1.0)
     print("This Tic Tac Toe game is played by putting down X's and O's.\n")
     print(f"You will be PLAYER X, {user}!\n")
     print("Player O is a computer and will be your opponent.\n")
+    time.sleep(5)
     print("Users take turns putting down their symbol in one of the board fields (1-9)\n")
     print("The first user to have three X's or O's in a row wins!\n")
     print("This can be either horizontal, vertical or diagonal.\n")
     print("**The layout of the board is 1,2,3 in the top row,\n")
     print("4,5,6 in the middle and 7,8,9 in the bottom row.**\n")
+    time.sleep(10)
     print("LET'S BEGIN!\n\n")
 
 """
@@ -59,11 +64,13 @@ Using dictionary keys and values from "boardPositions".
 """
 
 def printGameBoard(board):
+    print("")
     print(board['1'] + ' | ' + board['2'] + ' | ' + board['3'])
     print("--+---+--")
     print(board['4'] + ' | ' + board['5'] + ' | ' + board['6'])
     print("--+---+--")
     print(board['7'] + ' | ' + board['8'] + ' | ' + board['9'])
+    print("")
 
 
 def winningCombinations(board, recentPlayer):
@@ -140,6 +147,7 @@ def runGame():
     while checkForWin == False:
         if player == "X":
             while True:
+                time.sleep(0.2)
                 userSelection = input(f'Your turn {player}! Please enter a board position: \n')
                 if userSelection == "":
                     print ("Input invalid.... Please enter a number between 1-9!")
@@ -159,12 +167,13 @@ def runGame():
         elif player == 'O':
             #makes random selection for player O
             while player == 'O':
-                print("Computer's move..! \n")
+                time.sleep(0.5)
+                print("Computer's move..!")
                 randomSelection = str(random.randint(1, 9))
                 if boardPositions[randomSelection] == '-':
                     boardPositions[randomSelection] = 'O'
                     break
-        
+        time.sleep(1.5)
         printGameBoard(boardPositions)
 
         #game will stop if checkForWin returns true based on winningCombinations
