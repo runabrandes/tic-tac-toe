@@ -26,7 +26,7 @@ Function to ask for username
 
 def username_input():
     while True:
-        username = input("Please enter your name: \n")
+        username = input("Please enter your name: \n").capitalize()
         if username == "":
             print ("Input invalid.... Please enter a username!")
         elif not username.isalpha():
