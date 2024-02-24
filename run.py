@@ -26,9 +26,10 @@ def username_input():
 Outlining the rules to the user
 """
 def gameRules():
-    print(f"\nHello {user}!\n")
+    print(f"\nHello, {user}!\n")
     print("This Tic Tac Toe game is played by putting down X's and O's.\n")
     print(f"You will be PLAYER X, {user}!\n")
+    print("Player O is a computer and will be your opponent.\n")
     print("Users take turns putting down their symbol in one of the board fields (1-9)\n")
     print("The first user to have three X's or O's in a row wins!\n")
     print("This can be either horizontal, vertical or diagonal.\n")
@@ -119,7 +120,6 @@ def boardFull(board):
             return False
     return True
 
-
 """
 Function to empty every field in board
 """
@@ -129,36 +129,45 @@ def resetBoard(board):
 
 
 user = username_input()
-
-gameRules()
-
 player = "X"
-
 checkForWin = False
 
 def runGame():
     global checkForWin
     global player
+    global boardPositions
     
     while checkForWin == False:
-        while True:
-            userSelection = input(f'Your turn {player}! Please enter a board position: \n')
-            if userSelection == "":
-                print ("Input invalid.... Please enter a number between 1-9!")
-            elif not userSelection.isnumeric():
-                print("The selection cannot contain letters, please use numbers 1-9 only!")
-            elif not int(userSelection) in range(1,10):
-                print("Please enter a number between 1 and 9!\n")
-            else:
-                break
+        if player == "X":
+            while True:
+                userSelection = input(f'Your turn {player}! Please enter a board position: \n')
+                if userSelection == "":
+                    print ("Input invalid.... Please enter a number between 1-9!")
+                elif not userSelection.isnumeric():
+                    print("The selection cannot contain letters, please use numbers 1-9 only!")
+                elif not int(userSelection) in range(1,10):
+                    print("Please enter a number between 1 and 9!\n")
+                else:
+                    break
 
-        if checkIfOccupied(boardPositions, userSelection) == False:
-            print('This board position has already been chosen.\n')
-            continue
-        boardPositions[userSelection] = player
+            if checkIfOccupied(boardPositions, userSelection) == False:
+                print('This board position has already been chosen.\n')
+                continue
+
+            boardPositions[userSelection] = player
+
+        elif player == 'O':
+            #makes random selection for player O
+            while player == 'O':
+                print("Computer's move..! \n")
+                randomSelection = str(random.randint(1, 9))
+                if boardPositions[randomSelection] == '-':
+                    boardPositions[randomSelection] = 'O'
+                    break
+        
         printGameBoard(boardPositions)
 
-        #game will stop if checkForWin returns true based on winnignCombinations
+        #game will stop if checkForWin returns true based on winningCombinations
         checkForWin = winningCombinations(boardPositions, player)
 
         if boardFull(boardPositions) == True and checkForWin == False:
@@ -170,11 +179,16 @@ def runGame():
             playAgain()
             break
 
-    #swapping X and O - checks if player is X or O and swaps accordingly after checkForWin ran
+        if boardFull(boardPositions) == True and checkForWin == True:
+            playAgain()
+            break
+
+        #swapping X and O - checks if player is X or O and swaps accordingly after checkForWin ran
         if player == 'X':
             player = 'O'
         elif player == 'O':
             player = 'X'
+            
 
 """
 Function to ask user if they would like to restart the game
@@ -203,5 +217,5 @@ def playAgain():
             break
         return
 
-
+gameRules()
 runGame() 
