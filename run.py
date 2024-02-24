@@ -222,7 +222,7 @@ def playAgain():
     while True:
         try:
             print("Are you up for another round of Tic Tac Toe?")
-            userReply = input("Type 'y' for yes or 'n' for no!: \n")
+            userReply = input("Type 'y' for yes or 'n' for no!: \n").lower()
         except ValueError:
             print("Invalid input... Please try again!\n")
             continue
