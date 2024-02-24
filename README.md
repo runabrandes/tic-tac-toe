@@ -109,3 +109,51 @@ The game has got following features:
 
 #
 
+# TESTING
+
+## User story testing
+
+1. As a user, I want to be able to add my name to the game
+
+ | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+ | ------------- | ------------ | --------------------- | ------------------- |
+ | Enter  username | Input username when prompted | Username will be displayed in a welcome message and during the game | Works as expected |
+
+2. As a user, I want to be able decide where to place my symbol
+
+ | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+ |-------------|------------|---------------------|-------------------|
+ | Select game field | Place symbol on board | The user is able to place the X symbol on the game board | Works as expected |
+
+3. As a user, I want to be able to have a visual output of the game
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Display game board | Symbols placed will appear on board | The symbols placed on the board by user will be visible  | Works as expected |
+
+4. As a user, I want to be able to see the computer's choices on the game board
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Display computer turns | Displays symbol placed by computer on game board | Display computer's symbol on board | Works as expected |
+
+
+5. As a user, I want to be able to see who has won the game
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Final Result | The user or the computer has placed 3 symbols in a row | Displays a message with the winner of the game | Works as expected |
+
+6. As a user, I want to be able to play the game again once the game is complete
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Final Result | The user has the option of restarting a new game once the game has ended | Displays a message of do you want to play again (y for yes and n for no)| Works as expected |
+
+#
+
+## Validation
+
+### PEP8 Online Validation
+
+PEP8 online was used to check the code for PEP8 requirements.
