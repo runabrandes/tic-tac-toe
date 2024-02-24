@@ -143,12 +143,13 @@ def runGame():
     global checkForWin
     global player
     global boardPositions
+    global user
     
     while checkForWin == False:
         if player == "X":
             while True:
                 time.sleep(0.2)
-                userSelection = input(f'Your turn {player}! Please enter a board position: \n')
+                userSelection = input(f'Your turn, {user}! Please enter a board position: \n')
                 if userSelection == "":
                     print ("Input invalid.... Please enter a number between 1-9!")
                 elif not userSelection.isnumeric():
