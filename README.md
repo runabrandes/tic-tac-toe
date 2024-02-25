@@ -156,4 +156,50 @@ The game has got following features:
 
 ### PEP8 Online Validation
 
-PEP8 online was used to check the code for PEP8 requirements.
+"CI Python Linter" was used to check the code for PEP8 requirements.
+
+When I first ran the linter I got several errors regarding whitespaces and missing blank lines (2 expected, only 1 found).
+I fixed these errors where possible but have a few errors remaining that were not fixable due to the nature of the code. Please see below for screenshots.
+
+* The first errors are regarding the ASCII style header. The errors cannot be changed as this makes the header appear incorrectly. Regardless the programme is running as expected and these errors do not cause any problems.
+
+
+  * ![linter_1](assets/images/linter_1.png)
+  * ![linter_1.1](assets/images/linter_1.1.png)
+
+
+* The next set of erros are E501 which indicates that the lines of code are too long. I have tried to change this but was given syntax errors afterwards, so I have decided to keep the lines of code as they are. These errors do not affect how the programme is running.
+
+
+  * ![linter_2](assets/images/linter_2.png)
+  * ![linter_2.1](assets/images/linter_2.1.png)
+  
+
+* The last error codes I was given are E712 which say that comparison to True / False should be 'if cond is True / False'.
+My code uses the is equal to (==) symbols and when trying to adjust this to 'if cond is...', I was given syntax errors and have therefore decided to keep the code as it is. This does not impact the code in any way and the programme is running as expected.
+
+
+  * ![linter_3](assets/images/linter_3.png)
+  * ![linter_3.1](assets/images/linter_3.1.png)
+
+#
+
+## Solved bugs and errors
+
+* Throughout the development of this project, several automated errors have been fixed:
+
+  * Indentation errors
+  * Not enough whitespace between functions
+  * No new line at end of file
+  * Syntax errors
+  * Logic error regarding the computer input. After restructuring the runGame function (adding additional if/else block and changing the order of code inside the function) this was solved.
+
+#
+
+## Unsolved bugs and errors
+
+ I did not detect any errors or bugs that remained after I had fixed the exisiting ones.  
+  Please see "Solved bugs and errors" in this README file for further information on this. 
+
+#
+
