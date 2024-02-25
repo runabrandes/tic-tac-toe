@@ -62,7 +62,7 @@ The game has got following features:
 
 ### Name Prompt
 
-* The user gets prompted to input their name so the programme can use it throughou the game
+* The user gets prompted to input their name so the programme can use it throughout the game
 
 ![Name_Prompt](assets/images/name_prompt.png)
 
@@ -142,13 +142,13 @@ The game has got following features:
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Final Result | The user or the computer has placed 3 symbols in a row | Displays a message with the winner of the game | Works as expected |
+| Final Result | The user or the computer has placed 3 symbols in a row | Displays a message announcing the winner of the game | Works as expected |
 
 6. As a user, I want to be able to play the game again once the game is complete
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Final Result | The user has the option of restarting a new game once the game has ended | Displays a message of do you want to play again (y for yes and n for no)| Works as expected |
+| Final Result | The user has the option of restarting a new game once the game has ended | Displays a message of "do you want to play again? (y for yes and n for no)"| Works as expected |
 
 #
 
@@ -202,4 +202,27 @@ My code uses the is equal to (==) symbols and when trying to adjust this to 'if 
   Please see "Solved bugs and errors" in this README file for further information on this. 
 
 #
+
+# TECHNOLOGIES
+
+## DEVELOPMENT
+
+ * The project was written using [Gitpod](https://gitpod.io/)
+ * The project uses [Github](https://github.com/) for git version control
+ * The project was deployed using [Heroku](https://heroku.com/)
+
+ #
+
+## LANGUAGES USED
+
+ * [Python 3](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+ #
+
+## LIBRARIES USED
+
+ * [random](https://docs.python.org/3/library/random.html) to randomly generate the computer's placement of O's
+ * [time](https://www.programiz.com/python-programming/time) for delays when printing text and delay for printing game board after user or computer moves
+
+ #
 
