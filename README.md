@@ -269,3 +269,30 @@ App names can only be in lowercase letters, numbers and dashes.
     * git status - to see if the branch currently working on is up to date or if the are any unstaged changes
     * git log --oneline - to see the last commit
     * git commit --amend - to amend the most recent commit message
+
+#
+
+#### How to create a branch of main:
+
+If you need a `BRANCH` of the main repository:
+
+1. Login in to your [GitHub](www.github.com) account and go to [https://github.com/runabrandes/tic-tac-toe](https://github.com/runabrandes/tic-tac-toe)
+2. Click the drop down box `Main`
+3. Inside the box you will see `View all branches`, click this and it will take you to a new page
+4. Click `New Branch` in the top right corner
+4. Inside the text box, enter the new branch name
+5. Enter a new branch name
+6. Click on `Create New Branch`
+
+#
+
+#### How to fork a repository:
+
+If you need to `FORK` a repository:
+
+1. Login in to [GitHub](www.github.com) and go to [https://github.com/runabrandes/tic-tac-toe](https://github.com/runabrandes/tic-tac-toe)
+2. In the top right corner, click `Fork`
+3. The next page will be the forked version of [https://github.com/runabrandes/tic-tac-toe](https://github.com/runabrandes/tic-tac-toe) but in your own repositories
+
+#
+
