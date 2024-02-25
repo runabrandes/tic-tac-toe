@@ -333,3 +333,13 @@ If you need to make a local clone:
 * [W3Schools](https://www.w3schools.com/) for information on Python functions and how they can be implemented
 * [Stackoverflow](https://stackoverflow.com/) for methods of how to implement certain features of Python for this project (how to implement the game board correctly in this case)
 * [Python Docs](https://docs.python.org/3/) on explanation on how to properly use the time and random libraries
+
+#
+
+## ACKNOWLEDGEMENTS
+
+* My husband Jamie for his support and reading through my code! It's good being on this coding journey together!!
+* My mentor Rory for being supportive and giving me great advice when I thought I was unable to solve some issues and showing me that sometimes a solution is a lot simpler than I assumed! Thanks for helping me!
+* Joanne from Tutor Support who helped me activate a Gitpod account when my CodeAnywhere workspaces would no longer load due to issues with the website.
+* Sarah from Tutor Support who helped me re-write my runGame() function when I was not able to work out the solution.
+Thanks for your help and patience and pointing me in the right direction, which made the computer input work!
