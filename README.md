@@ -326,3 +326,10 @@ If you need to make a local clone:
 
 #
 
+## CREDITS
+
+* YouTube tutorials on how to build a Tic Tac Toe game, in particular the tutorials by Garrett Codes, Bytes of Code and Shaun Halverson
+* Code Institue course material for reminders of how to use certain Python features
+* [W3Schools](https://www.w3schools.com/) for information on Python functions and how they can be implemented
+* [Stackoverflow](https://stackoverflow.com/) for methods of how to implement certain features of Python for this project (how to implement the game board correctly in this case)
+* [Python Docs](https://docs.python.org/3/) on explanation on how to properly use the time and random libraries
