@@ -28,7 +28,7 @@ The features I wanted the game to have are:
 
 ## Flowchart
 
-Insert when ready
+![flowchart](assets/images/flowchart.png)
 
 #
 
