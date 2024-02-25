@@ -224,5 +224,48 @@ My code uses the is equal to (==) symbols and when trying to adjust this to 'if 
  * [random](https://docs.python.org/3/library/random.html) to randomly generate the computer's placement of O's
  * [time](https://www.programiz.com/python-programming/time) for delays when printing text and delay for printing game board after user or computer moves
 
- #
+#
 
+# DEPLOYMENT
+
+## Heroku DEPLOYMENT
+
+* This game was deployed using [Heroku](https://heroku.com/) with the following the steps:
+
+1. Navigate to [Heroku.com](https://www.heroku.com/) and login (or create a new account).
+2. On the top right hand side, click the `New` button.
+3. Inside the dropdown menu, select `Create new app`.
+4. Create a new name for your app (making sure the name chosen is available) in this case it is `tic-tac-toe-project3`. 
+App names can only be in lowercase letters, numbers and dashes.
+5. Select your region, in this case `Europe`.
+6. Click on the `Create App` button.  
+7. This will create your app in Heroku and take you to the dashboard.
+8. Navigate to the settings tab and scroll down to the button `Reveal Config vars`.
+9. Replace the word `KEY` and enter `PORT` and then replace the word `VALUE` and enter `8000` then click on the `Add` button.
+10. Below `Config vars` is `Buildpacks`. Click the `Add Buildpack` button.
+11. In the pop up window, select `python` and save changes.
+12. Repeat this again but this time select `node.js` and save the changes.
+13. It is **important** to make sure the buildpacks are in the correct order, `Python` should be first and `node.js` second. If they are not in the correct order, you can drag them into the right order.
+14. Next, navigate to the `Deploy` tab at the top left.
+15. Select `Github, 'connect to github'` as the deployment method.
+16. Search for the Github Repository in the search field (in this case `tic-tac-toe`) and click `Search`.
+17. When the search is complete, click `Connect`.
+18. Once your repository is connected to [Heroku](https://heroku.com/), click the `Enable Automatic Deploys` button for automatic deployment.
+19. Alternatively you can manually deploy by selecting a branch to deploy from and clicking `Deploy Branch`.
+20. If you choose to `Enable Automatic Deploys`, [Heroku](https://heroku.com/) will build a new version of the app when a change to `gitpod` is pushed to `Github`.  
+21. Manual deployment allows you to update the app whenever you click `Deploy Branch`.
+    In the case of this project, I chose to `Enable Automatic Deploys` to ensure the code was deployed straight away at each push from `Gitpod`.
+22. Once the build process is complete you will be able to view the live app by clicking on the `View` button.
+
+#
+
+## VERSION CONTROL
+
+* These commands were used for version control during project:
+
+    * git commit -m "example message" - to commit changes to the local repository
+    * git push - to push all committed changes to the GitHub repository
+    * git pull - to pull all code into main branch once the feature branch had been merged and deleted
+    * git status - to see if the branch currently working on is up to date or if the are any unstaged changes
+    * git log --oneline - to see the last commit
+    * git commit --amend - to amend the most recent commit message
