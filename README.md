@@ -56,56 +56,56 @@ The features I wanted the game to have are:
 The game has got following features:
 ### Header
 
-* The game has a header which was made in an ASCII generator
+* The game has a header which was made in an ASCII generator. This is an eyecatcher for the users and was implemented to make users more interested in the game.
 
 ![Game_Header](assets/images/game_title.png)
 
 ### Name Prompt
 
-* The user gets prompted to input their name so the programme can use it throughout the game
+* The user gets prompted to input their name so the programme can use it throughout the game. This is so the game feels more personla to the user. If the user should accidentally enter a number or press the "Enter" key without any input at all, the programme was designed to make the user aware of this (Error Handling). The user will be asked to make their input again.
 
 ![Name_Prompt](assets/images/name_prompt.png)
 
 ### Game Rules
 
 * After inputting a name, the programme displays the game rules
-* These are programmed to pop up bit by bit to make sure the user reads them thoroughly
+* These are programmed to pop up bit by bit to make sure the user reads them thoroughly. This was done using the `time` library.
 
 ![Game_Rules](assets/images/rules.png)
 
 ### User Input
 
-* Afther the rules have been displayed the user is asked to input their game field selection
+* After the rules have been displayed the user is asked to input their game field selection. Once a field has been selected the programme will then proceed to print the board and the selected field will have an "X" printed in it. A visual output of the game board makes the game easy to follow. An input between 1 - 9 is allowed. In the case of the user entering a number that is out of the range of 1 - 9 or enter a letter or no input at all, Error Handling was added to this section of the code. The programme will ask th euser to make their input again in this case before proceeding to print the corrext input on the game board. 
 
 ![User_Input](assets/images/field_selection.png)
 
 ### Computer
 
-* The computer is the user's opponent and randomly selects available game fields
+* The computer is the user's opponent and randomly selects available game fields. After the "computer's move", the game board will be printed and an "O" will be visible in the field that the computer has selected.
 
 ![Computer_Input](assets/images/computer_move.png)
 
 ### Game Board
 
-* The programme prints a game board after every input to make the available fields and previous selections visible to the user
+* The programme prints a game board after every input to make the available fields and previous selections visible to the user.
 
 ![board](assets/images/board.png)
 
 ### Play Again Option
 
-* The user gets the option to play again after the game has finished
+* The user gets the option to play again after the game has finished. If yes is selected, the game will start over from the first user input.
 
 ![play_again](assets/images/another_round.png)
 
 ### Goodbye Message
 
-* If the user decides they do not want to play another round, a Goodbye message is displayed
+* If the user decides they do not want to play another round, a Goodbye message is displayed.
 
 ![goodbye](assets/images/goodbye.png)
 
 ## Future Feature
 
-* An idea for a future feature would be to let the user decide if they want to play against a computer or let Player O be a friend instead and turn the game into a 2 player game on selection
+* An idea for a future feature would be to let the user decide if they want to play against a computer or let Player O be a friend instead and turn the game into a 2 player game on selection.
 
 #
 
