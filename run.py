@@ -1,9 +1,7 @@
 import random
 import time
 
-"""
-Title for game
-"""
+# Title for game
 print(
     r"""
   _____ _        _____            _____
@@ -45,7 +43,7 @@ Outlining the rules to the user
 time.sleep(1.0)
 
 
-def gameRules():
+def game_rules():
     print(f"\nHello, {user}!\n")
     time.sleep(1.0)
     print("This Tic Tac Toe game is played by putting down X's and O's.\n")
@@ -65,7 +63,7 @@ def gameRules():
 Creating a tic tac toe board.
 """
 
-boardPositions = {
+board_positions = {
     "1": "-",
     "2": "-",
     "3": "-",
@@ -79,11 +77,11 @@ boardPositions = {
 
 """
 Function to print the board game and make it visible to user.
-Using dictionary keys and values from "boardPositions".
+Using dictionary keys and values from "board_positions".
 """
 
 
-def printGameBoard(board):
+def print_game_board(board):
     print("")
     print(board["1"] + " | " + board["2"] + " | " + board["3"])
     print("--+---+--")
@@ -93,70 +91,70 @@ def printGameBoard(board):
     print("")
 
 
-def winningCombinations(board, recentPlayer):
+def winning_combinations(board, recent_player):
     # top row
     if (
-        board["1"] == recentPlayer
-        and board["2"] == recentPlayer
-        and board["3"] == recentPlayer
+        board["1"] == recent_player
+        and board["2"] == recent_player
+        and board["3"] == recent_player
     ):
-        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
+        print(f"{recent_player} wins this round of Tic Tac Toe!")
         return True
     # middle row
     if (
-        board["4"] == recentPlayer
-        and board["5"] == recentPlayer
-        and board["6"] == recentPlayer
+        board["4"] == recent_player
+        and board["5"] == recent_player
+        and board["6"] == recent_player
     ):
-        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
+        print(f"{recent_player} wins this round of Tic Tac Toe!")
         return True
     # bottom row
     if (
-        board["7"] == recentPlayer
-        and board["8"] == recentPlayer
-        and board["9"] == recentPlayer
+        board["7"] == recent_player
+        and board["8"] == recent_player
+        and board["9"] == recent_player
     ):
-        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
+        print(f"{recent_player} wins this round of Tic Tac Toe!")
         return True
     # left column
     if (
-        board["1"] == recentPlayer
-        and board["4"] == recentPlayer
-        and board["7"] == recentPlayer
+        board["1"] == recent_player
+        and board["4"] == recent_player
+        and board["7"] == recent_player
     ):
-        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
+        print(f"{recent_player} wins this round of Tic Tac Toe!")
         return True
     # middle column
     if (
-        board["2"] == recentPlayer
-        and board["5"] == recentPlayer
-        and board["8"] == recentPlayer
+        board["2"] == recent_player
+        and board["5"] == recent_player
+        and board["8"] == recent_player
     ):
-        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
+        print(f"{recent_player} wins this round of Tic Tac Toe!")
         return True
     # right column
     if (
-        board["3"] == recentPlayer
-        and board["6"] == recentPlayer
-        and board["9"] == recentPlayer
+        board["3"] == recent_player
+        and board["6"] == recent_player
+        and board["9"] == recent_player
     ):
-        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
+        print(f"{recent_player} wins this round of Tic Tac Toe!")
         return True
     # diagonal 1,5,9
     if (
-        board["1"] == recentPlayer
-        and board["5"] == recentPlayer
-        and board["9"] == recentPlayer
+        board["1"] == recent_player
+        and board["5"] == recent_player
+        and board["9"] == recent_player
     ):
-        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
+        print(f"{recent_player} wins this round of Tic Tac Toe!")
         return True
     # diagonal 3,5,7
     if (
-        board["3"] == recentPlayer
-        and board["5"] == recentPlayer
-        and board["7"] == recentPlayer
+        board["3"] == recent_player
+        and board["5"] == recent_player
+        and board["7"] == recent_player
     ):
-        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
+        print(f"{recent_player} wins this round of Tic Tac Toe!")
         return True
 
     return False
@@ -167,7 +165,7 @@ Function to check if the field the user chooses is still available
 """
 
 
-def checkIfOccupied(board, recentTurn):
+def check_if_occupied(board, recentTurn):
     if board[recentTurn] != "-":
         return False
     return True
@@ -178,7 +176,7 @@ Function to check if the game board is full
 """
 
 
-def boardFull(board):
+def board_full(board):
     for field in board:
         if board[field] == "-":
             return False
@@ -190,70 +188,70 @@ Function to empty every field in board
 """
 
 
-def resetBoard(board):
+def reset_board(board):
     for key in board:
         board[key] = "-"
 
 
 user = username_input()
 player = "X"
-checkForWin = False
+check_for_win = False
 
 
-def runGame():
-    global checkForWin
+def run_game():
+    global check_for_win
     global player
-    global boardPositions
+    global board_positions
     global user
 
-    while checkForWin is False:
+    while check_for_win is False:
         if player == "X":
             while True:
                 time.sleep(0.2)
-                userSelection = input(
+                user_selection = input(
                     f"Your turn, {user}! Please enter a board position: \n"
                 )
-                if userSelection == "":
+                if user_selection == "":
                     print("Input invalid.. Please enter a number between 1-9!")
-                elif not userSelection.isnumeric():
+                elif not user_selection.isnumeric():
                     print("The selection cannot contain letters!")
-                elif not int(userSelection) in range(1, 10):
+                elif not int(user_selection) in range(1, 10):
                     print("Please enter a number between 1 and 9!\n")
                 else:
                     break
 
-            if checkIfOccupied(boardPositions, userSelection) is False:
+            if check_if_occupied(board_positions, user_selection) is False:
                 print("This board position has already been chosen.\n")
                 continue
 
-            boardPositions[userSelection] = player
+            board_positions[user_selection] = player
 
         elif player == "O":
             print("Computer's move..!")
             # makes random selection for player O
             while player == "O":
                 time.sleep(0.5)
-                randomSelection = str(random.randint(1, 9))
-                if boardPositions[randomSelection] == "-":
-                    boardPositions[randomSelection] = "O"
+                random_selection = str(random.randint(1, 9))
+                if board_positions[random_selection] == "-":
+                    board_positions[random_selection] = "O"
                     break
         time.sleep(1.5)
-        printGameBoard(boardPositions)
+        print_game_board(board_positions)
 
-        # game stops if checkForWin returns true based on winningCombinations
-        checkForWin = winningCombinations(boardPositions, player)
+        # game stops if check_for_win returns true based on winning_combinations
+        check_for_win = winning_combinations(board_positions, player)
 
-        if boardFull(boardPositions) is True and checkForWin is False:
+        if board_full(board_positions) is True and check_for_win is False:
             print("This round is a TIE! Better luck next time..!\n")
-            playAgain()
+            play_again()
             break
 
-        if boardFull(boardPositions) is False and checkForWin is True:
-            playAgain()
+        if board_full(board_positions) is False and check_for_win is True:
+            play_again()
             break
 
-        if boardFull(boardPositions) is True and checkForWin is True:
-            playAgain()
+        if board_full(board_positions) is True and check_for_win is True:
+            play_again()
             break
 
         # checks if player is X or O and swaps accordingly
@@ -268,30 +266,30 @@ Function to ask user if they would like to restart the game
 """
 
 
-def playAgain():
+def play_again():
     global player
-    global checkForWin
+    global check_for_win
 
     while True:
         try:
             print("Are you up for another round of Tic Tac Toe?")
-            userReply = input("Type 'y' for yes or 'n' for no!: \n").lower()
+            user_reply = input("Type 'y' for yes or 'n' for no!: \n").lower()
         except ValueError:
             print("Invalid input... Please try again!\n")
             continue
-        if userReply != "y" and userReply != "n":
+        if user_reply != "y" and user_reply != "n":
             print("Invalid input... Please use y for yes or n for no!")
             continue
-        elif userReply == "y":
+        elif user_reply == "y":
             player = "X"
-            resetBoard(boardPositions)
-            checkForWin = False
-            runGame()
-        elif userReply == "n":
+            reset_board(board_positions)
+            check_for_win = False
+            run_game()
+        elif user_reply == "n":
             print("Thanks for playing! See you next time")
             break
         return
 
 
-gameRules()
-runGame()
+game_rules()
+run_game()
