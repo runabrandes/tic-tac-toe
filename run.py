@@ -13,20 +13,18 @@ print(
 """
 )
 
-"""
-Greeting message to user
-"""
+
+# Greeting message to user
+
 print("_________________________________\n")
 print("Welcome to this Tic Tac Toe game!")
 print("_________________________________\n")
 
 
-"""
-Function to ask for username
-"""
-
-
 def username_input():
+    """
+    Function to ask for username
+    """
     while True:
         username = input("Please enter your name: \n").capitalize()
         if username == "":
@@ -37,13 +35,13 @@ def username_input():
             return username
 
 
-"""
-Outlining the rules to the user
-"""
 time.sleep(1.0)
 
 
 def game_rules():
+    """
+    Outlining the rules to the user
+    """
     print(f"\nHello, {user}!\n")
     time.sleep(1.0)
     print("This Tic Tac Toe game is played by putting down X's and O's.\n")
@@ -59,9 +57,7 @@ def game_rules():
     print("LET'S BEGIN!\n\n")
 
 
-"""
-Creating a tic tac toe board.
-"""
+# Creating the tic tac toe board
 
 board_positions = {
     "1": "-",
@@ -75,13 +71,12 @@ board_positions = {
     "9": "-",
 }
 
-"""
-Function to print the board game and make it visible to user.
-Using dictionary keys and values from "board_positions".
-"""
-
 
 def print_game_board(board):
+    """
+    Function to print the board game and make it visible to user.
+    Using dictionary keys and values from "board_positions".
+    """
     print("")
     print(board["1"] + " | " + board["2"] + " | " + board["3"])
     print("--+---+--")
@@ -92,6 +87,9 @@ def print_game_board(board):
 
 
 def winning_combinations(board, recent_player):
+    """
+    Function to announce winner if correct combination made
+    """
     # top row
     if (
         board["1"] == recent_player
@@ -160,35 +158,29 @@ def winning_combinations(board, recent_player):
     return False
 
 
-"""
-Function to check if the field the user chooses is still available
-"""
-
-
 def check_if_occupied(board, recentTurn):
+    """
+    Function to check if the field the user chooses is still available
+    """
     if board[recentTurn] != "-":
         return False
     return True
 
 
-"""
-Function to check if the game board is full
-"""
-
-
 def board_full(board):
+    """
+    Function to check if the game board is full
+    """
     for field in board:
         if board[field] == "-":
             return False
     return True
 
 
-"""
-Function to empty every field in board
-"""
-
-
 def reset_board(board):
+    """
+    Function to empty every field in board
+    """
     for key in board:
         board[key] = "-"
 
@@ -199,6 +191,9 @@ check_for_win = False
 
 
 def run_game():
+    """
+    Main function to make the game run
+    """
     global check_for_win
     global player
     global board_positions
@@ -238,7 +233,7 @@ def run_game():
         time.sleep(1.5)
         print_game_board(board_positions)
 
-        # game stops if check_for_win returns true based on winning_combinations
+        # game stops if check_for_win returns "winning_combinations is true"
         check_for_win = winning_combinations(board_positions, player)
 
         if board_full(board_positions) is True and check_for_win is False:
@@ -261,12 +256,10 @@ def run_game():
             player = "X"
 
 
-"""
-Function to ask user if they would like to restart the game
-"""
-
-
 def play_again():
+    """
+    Function to ask user if they would like to restart the game
+    """
     global player
     global check_for_win
 
@@ -278,7 +271,7 @@ def play_again():
             print("Invalid input... Please try again!\n")
             continue
         if user_reply != "y" and user_reply != "n":
-            print("Invalid input... Please use y for yes or n for no!")
+            print("Invalid input... Please use y for yes or n for no!\n")
             continue
         elif user_reply == "y":
             player = "X"
