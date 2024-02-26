@@ -158,29 +158,19 @@ The game has got following features:
 
 "CI Python Linter" was used to check the code for PEP8 requirements.
 
-When I first ran the linter I got several errors regarding whitespaces and missing blank lines (2 expected, only 1 found).
-I fixed these errors where possible but have a few errors remaining that were not fixable due to the nature of the code. Please see below for screenshots.
+* When I first ran the linter I got several errors such as, whitespaces and missing blank lines (2 expected, only 1 found).
+I fixed these errors according to the PEP8 requirements.
 
-* The first errors are regarding the ASCII style header. The errors cannot be changed as this makes the header appear incorrectly. Regardless the programme is running as expected and these errors do not cause any problems.
+* I had another error for backslashes in the ASCII style header. I was able to solve this by placing an "r" (raw) prefix inside the print function for the ASCII header.
 
+* The next set of erros were E501 which indicates that the lines of code are too long. I was able to change this by formatting the code sections as required and the error was cleared that way!
 
-  * ![linter_1](assets/images/linter_1.png)
-  * ![linter_1.1](assets/images/linter_1.1.png)
+* The last error codes I was given were E712 which say that comparison to True / False should be 'if cond is True / False'.
+My code used the is equal to (==) symbols and after changing "==" to "is", all the E712 errors were also cleared.
 
+When running the PEP8 Linter again, my code was free of any other PEP8 issues.
 
-* The next set of erros are E501 which indicates that the lines of code are too long. I have tried to change this but was given syntax errors afterwards, so I have decided to keep the lines of code as they are. These errors do not affect how the programme is running.
-
-
-  * ![linter_2](assets/images/linter_2.png)
-  * ![linter_2.1](assets/images/linter_2.1.png)
-  
-
-* The last error codes I was given are E712 which say that comparison to True / False should be 'if cond is True / False'.
-My code uses the is equal to (==) symbols and when trying to adjust this to 'if cond is...', I was given syntax errors and have therefore decided to keep the code as it is. This does not impact the code in any way and the programme is running as expected.
-
-
-  * ![linter_3](assets/images/linter_3.png)
-  * ![linter_3.1](assets/images/linter_3.1.png)
+![linter](assets/images/linter.png)
 
 #
 
