@@ -8,6 +8,8 @@ This can be up, down, across or diagonally.
 If neither player gets three symbols into a row but the game board is full, the game ends in a tie.
 In this game the user is player X and plays against a computer, player O.
 
+A link to the live project can be found [here](https://tic-tac-toe-project3-8fbe162aa8c0.herokuapp.com/)
+
 ![Final project image](assets/images/AmIResponsive.png) [Am I Responsive](https://amiresponsive.co.uk/)
 
 #
