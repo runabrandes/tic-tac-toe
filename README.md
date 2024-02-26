@@ -62,7 +62,7 @@ The game has got following features:
 
 ### Name Prompt
 
-* The user gets prompted to input their name so the programme can use it throughout the game. This is so the game feels more personla to the user. If the user should accidentally enter a number or press the "Enter" key without any input at all, the programme was designed to make the user aware of this (Error Handling). The user will be asked to make their input again.
+* The user gets prompted to input their name so the programme can use it throughout the game. This is so the game feels more personal to the user. If the user should accidentally enter a number or press the "Enter" key without any input at all, the programme was designed to make the user aware of this (Error Handling). The user will be asked to make their input again.
 
 ![Name_Prompt](assets/images/name_prompt.png)
 
@@ -75,7 +75,7 @@ The game has got following features:
 
 ### User Input
 
-* After the rules have been displayed the user is asked to input their game field selection. Once a field has been selected the programme will then proceed to print the board and the selected field will have an "X" printed in it. A visual output of the game board makes the game easy to follow. An input between 1 - 9 is allowed. In the case of the user entering a number that is out of the range of 1 - 9 or enter a letter or no input at all, Error Handling was added to this section of the code. The programme will ask th euser to make their input again in this case before proceeding to print the corrext input on the game board. 
+* After the rules have been displayed the user is asked to input their game field selection. Once a field has been selected the programme will then proceed to print the board and the selected field will have an "X" printed in it. A visual output of the game board makes the game easy to follow. An input between 1 - 9 is allowed. In the case of the user entering a number that is out of the range of 1 - 9 or enter a letter or no input at all, Error Handling was added to this section of the code. The programme will ask the user to make their input again in this case before proceeding to print the corrext input on the game board. 
 
 ![User_Input](assets/images/field_selection.png)
 
@@ -163,7 +163,7 @@ I fixed these errors according to the PEP8 requirements.
 
 * I had another error for backslashes in the ASCII style header. I was able to solve this by placing an "r" (raw) prefix inside the print function for the ASCII header.
 
-* The next set of erros were E501 which indicates that the lines of code are too long. I was able to change this by formatting the code sections as required and the error was cleared that way!
+* The next set of errors were E501 which indicates that the lines of code are too long. I was able to change this by formatting the code sections as required and the error was cleared that way!
   * Especially when it came to the winning_combinations() function, which includes a lot of repetitve and long lines of code, I was able to refactor the code after gaining a better understanding of this part of Python and how to approach the issue.
 
 * The last error codes I was given were E712 which say that comparison to True / False should be 'if cond is True / False'.
@@ -185,6 +185,7 @@ When running the PEP8 Linter again, my code was free of any other PEP8 issues.
   * Syntax errors
   * Logic error regarding the computer input. After restructuring the runGame function (adding additional if/else block and changing the order of code inside the function) this was solved.
   * Whenever it was the "computer's move" the message "Computer's move ..!" would print several times on occassion. This was due to the print("Computer's move..!) being included in the while loop. After placing the print function outside of the while loop (inside of the if statement "if player == "O":") this bug was fixed, and the output only printed once as desired.
+  * I made the mistake of placing docstring comments above the functions rather than inside the functions. I have now corrected this issue and in place of some misused docstrings I have added in-line comments instead. 
 
 #
 
