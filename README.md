@@ -152,7 +152,7 @@ The game has got following features:
 
 #
 
-## Validation
+## VALIDATION
 
 ### PEP8 Online Validation
 
@@ -164,6 +164,7 @@ I fixed these errors according to the PEP8 requirements.
 * I had another error for backslashes in the ASCII style header. I was able to solve this by placing an "r" (raw) prefix inside the print function for the ASCII header.
 
 * The next set of erros were E501 which indicates that the lines of code are too long. I was able to change this by formatting the code sections as required and the error was cleared that way!
+  * Especially when it came to the winning_combinations() function, which includes a lot of repetitve and long lines of code, I was able to refactor the code after gaining a better understanding of this part of Python and how to approach the issue.
 
 * The last error codes I was given were E712 which say that comparison to True / False should be 'if cond is True / False'.
 My code used the is equal to (==) symbols and after changing "==" to "is", all the E712 errors were also cleared.
@@ -183,6 +184,7 @@ When running the PEP8 Linter again, my code was free of any other PEP8 issues.
   * No new line at end of file
   * Syntax errors
   * Logic error regarding the computer input. After restructuring the runGame function (adding additional if/else block and changing the order of code inside the function) this was solved.
+  * Whenever it was the "computer's move" the message "Computer's move ..!" would print several times on occassion. This was due to the print("Computer's move..!) being included in the while loop. After placing the print function outside of the while loop (inside of the if statement "if player == "O":") this bug was fixed, and the output only printed once as desired.
 
 #
 
