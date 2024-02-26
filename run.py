@@ -4,14 +4,16 @@ import time
 """
 Title for game
 """
-print("""
+print(
+    r"""
   _____ _        _____            _____
  |_   _(_) ___  |_   _|_ _  ___  |_   _|__   ___
-   | | | |/ __|   | |/ _` |/ __|   | |/ _ \ / _ \\
+   | | | |/ __|   | |/ _` |/ __|   | |/ _ \ / _ \
    | | | | (__    | | (_| | (__    | | (_) |  __/
    |_| |_|\___|   |_|\__,_|\___|   |_|\___/ \___|
 
-""")
+"""
+)
 
 """
 Greeting message to user
@@ -64,15 +66,15 @@ Creating a tic tac toe board.
 """
 
 boardPositions = {
-    '1': '-',
-    '2': '-',
-    '3': '-',
-    '4': '-',
-    '5': '-',
-    '6': '-',
-    '7': '-',
-    '8': '-',
-    '9': '-',
+    "1": "-",
+    "2": "-",
+    "3": "-",
+    "4": "-",
+    "5": "-",
+    "6": "-",
+    "7": "-",
+    "8": "-",
+    "9": "-",
 }
 
 """
@@ -83,46 +85,78 @@ Using dictionary keys and values from "boardPositions".
 
 def printGameBoard(board):
     print("")
-    print(board['1'] + ' | ' + board['2'] + ' | ' + board['3'])
+    print(board["1"] + " | " + board["2"] + " | " + board["3"])
     print("--+---+--")
-    print(board['4'] + ' | ' + board['5'] + ' | ' + board['6'])
+    print(board["4"] + " | " + board["5"] + " | " + board["6"])
     print("--+---+--")
-    print(board['7'] + ' | ' + board['8'] + ' | ' + board['9'])
+    print(board["7"] + " | " + board["8"] + " | " + board["9"])
     print("")
 
 
 def winningCombinations(board, recentPlayer):
     # top row
-    if board['1'] == recentPlayer and board['2'] == recentPlayer and board['3'] == recentPlayer:
-        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+    if (
+        board["1"] == recentPlayer
+        and board["2"] == recentPlayer
+        and board["3"] == recentPlayer
+    ):
+        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
         return True
     # middle row
-    if board['4'] == recentPlayer and board['5'] == recentPlayer and board['6'] == recentPlayer:
-        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+    if (
+        board["4"] == recentPlayer
+        and board["5"] == recentPlayer
+        and board["6"] == recentPlayer
+    ):
+        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
         return True
     # bottom row
-    if board['7'] == recentPlayer and board['8'] == recentPlayer and board['9'] == recentPlayer:
-        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+    if (
+        board["7"] == recentPlayer
+        and board["8"] == recentPlayer
+        and board["9"] == recentPlayer
+    ):
+        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
         return True
     # left column
-    if board['1'] == recentPlayer and board['4'] == recentPlayer and board['7'] == recentPlayer:
-        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+    if (
+        board["1"] == recentPlayer
+        and board["4"] == recentPlayer
+        and board["7"] == recentPlayer
+    ):
+        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
         return True
     # middle column
-    if board['2'] == recentPlayer and board['5'] == recentPlayer and board['8'] == recentPlayer:
-        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+    if (
+        board["2"] == recentPlayer
+        and board["5"] == recentPlayer
+        and board["8"] == recentPlayer
+    ):
+        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
         return True
     # right column
-    if board['3'] == recentPlayer and board['6'] == recentPlayer and board['9'] == recentPlayer:
-        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+    if (
+        board["3"] == recentPlayer
+        and board["6"] == recentPlayer
+        and board["9"] == recentPlayer
+    ):
+        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
         return True
     # diagonal 1,5,9
-    if board['1'] == recentPlayer and board['5'] == recentPlayer and board['9'] == recentPlayer:
-        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+    if (
+        board["1"] == recentPlayer
+        and board["5"] == recentPlayer
+        and board["9"] == recentPlayer
+    ):
+        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
         return True
     # diagonal 3,5,7
-    if board['3'] == recentPlayer and board['5'] == recentPlayer and board['7'] == recentPlayer:
-        print(f'{recentPlayer} wins this round of Tic Tac Toe!')
+    if (
+        board["3"] == recentPlayer
+        and board["5"] == recentPlayer
+        and board["7"] == recentPlayer
+    ):
+        print(f"{recentPlayer} wins this round of Tic Tac Toe!")
         return True
 
     return False
@@ -134,7 +168,7 @@ Function to check if the field the user chooses is still available
 
 
 def checkIfOccupied(board, recentTurn):
-    if board[recentTurn] != '-':
+    if board[recentTurn] != "-":
         return False
     return True
 
@@ -146,7 +180,7 @@ Function to check if the game board is full
 
 def boardFull(board):
     for field in board:
-        if board[field] == '-':
+        if board[field] == "-":
             return False
     return True
 
@@ -158,7 +192,7 @@ Function to empty every field in board
 
 def resetBoard(board):
     for key in board:
-        board[key] = '-'
+        board[key] = "-"
 
 
 user = username_input()
@@ -172,11 +206,13 @@ def runGame():
     global boardPositions
     global user
 
-    while checkForWin == False:
+    while checkForWin is False:
         if player == "X":
             while True:
                 time.sleep(0.2)
-                userSelection = input(f'Your turn, {user}! Please enter a board position: \n')
+                userSelection = input(
+                    f"Your turn, {user}! Please enter a board position: \n"
+                )
                 if userSelection == "":
                     print("Input invalid.. Please enter a number between 1-9!")
                 elif not userSelection.isnumeric():
@@ -186,20 +222,20 @@ def runGame():
                 else:
                     break
 
-            if checkIfOccupied(boardPositions, userSelection) == False:
-                print('This board position has already been chosen.\n')
+            if checkIfOccupied(boardPositions, userSelection) is False:
+                print("This board position has already been chosen.\n")
                 continue
 
             boardPositions[userSelection] = player
 
-        elif player == 'O':
+        elif player == "O":
+            print("Computer's move..!")
             # makes random selection for player O
-            while player == 'O':
+            while player == "O":
                 time.sleep(0.5)
-                print("Computer's move..!")
                 randomSelection = str(random.randint(1, 9))
-                if boardPositions[randomSelection] == '-':
-                    boardPositions[randomSelection] = 'O'
+                if boardPositions[randomSelection] == "-":
+                    boardPositions[randomSelection] = "O"
                     break
         time.sleep(1.5)
         printGameBoard(boardPositions)
@@ -207,24 +243,24 @@ def runGame():
         # game stops if checkForWin returns true based on winningCombinations
         checkForWin = winningCombinations(boardPositions, player)
 
-        if boardFull(boardPositions) == True and checkForWin == False:
-            print('This round is a TIE! Better luck next time..!\n')
+        if boardFull(boardPositions) is True and checkForWin is False:
+            print("This round is a TIE! Better luck next time..!\n")
             playAgain()
             break
 
-        if boardFull(boardPositions) == False and checkForWin == True:
+        if boardFull(boardPositions) is False and checkForWin is True:
             playAgain()
             break
 
-        if boardFull(boardPositions) == True and checkForWin == True:
+        if boardFull(boardPositions) is True and checkForWin is True:
             playAgain()
             break
 
-        # schecks if player is X or O and swaps accordingly
-        if player == 'X':
-            player = 'O'
-        elif player == 'O':
-            player = 'X'
+        # checks if player is X or O and swaps accordingly
+        if player == "X":
+            player = "O"
+        elif player == "O":
+            player = "X"
 
 
 """

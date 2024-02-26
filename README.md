@@ -14,7 +14,7 @@ In this game the user is player X and plays against a computer, player O.
 
 ## PROJECT IDEA
 
-My initial idea for this project was to build a simple and easy to undertsnad Tic Tac Toe game that the user can play against a computer.
+My initial idea for this project was to build a simple and easy to understand Tic Tac Toe game that the user can play against a computer.
 
 The features I wanted the game to have are:
 
